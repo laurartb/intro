@@ -8,6 +8,14 @@
 /* ---------- TAREA 1 · El tornillo del logo gira (.tornillo) ----------
    gsap.to() con rotation, duration, ease: 'none' y repeat: -1 */
 
+   gsap.to('.tornillo', {
+      rotation: 360, // grados de rotación
+      duration: 6, // segundos
+      ease: 'none', //velocidad oaceleracion constante (por defecto es ease-in-out)
+      repeat: -1 //numero de repeticiones, -1 es infinito
+   });
+
+
 
 
 /* ---------- TAREA 2 · Colocar el escaparate (#colocar y .tarjeta) ----------
