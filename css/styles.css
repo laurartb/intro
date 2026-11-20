@@ -1,0 +1,75 @@
+/* =========================================================
+   La Aguja y el Tornillo · Taller de GSAP
+   Aquí solo hay estado inicial y estilos: el movimiento lo hace GSAP en js/main.js
+   ========================================================= */
+
+@layer theme, base, components, utilities;
+
+
+/* ---------- BASE ---------- */
+@layer base {
+    ::selection {
+        background: var(--color-acento);
+        color: var(--color-fondo);
+    }
+
+    /* Evitar el parpadeo: si hay JavaScript, la cabecera y la portada
+       empiezan ocultas y GSAP las muestra al empezar la intro */
+    .js .cabecera,
+    .js .portada {
+        visibility: hidden;
+    }
+}
+
+
+/* ---------- COMPONENTES ---------- */
+@layer components {
+
+    /* Cada línea del título es una "ventana": el texto sube desde abajo y se recorta */
+    .linea {
+        display: block;
+        overflow: clip;
+        padding-bottom: 0.08em; /* para que no se corten los rabos de la g o la p */
+    }
+    .linea-texto {
+        display: inline-block;
+    }
+
+    /* Menú a pantalla completa: empieza oculto (lo abre la timeline) */
+    .menu {
+        visibility: hidden;
+    }
+    .menu-enlace {
+        transition: color 0.2s ease;
+    }
+
+    /* Botones del mando */
+    .boton-mando {
+        padding: 0.55rem 1.1rem;
+        border: 1px solid var(--color-borde);
+        border-radius: 999px;
+        background: var(--color-fondo);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+        font-size: 0.875rem;
+        font-weight: 600;
+        transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    .boton-mando:hover,
+    .boton-mando:focus-visible {
+        border-color: var(--color-acento);
+        color: var(--color-acento);
+    }
+
+    /* Laboratorio: la ficha que se mueve por la pista */
+    .ficha {
+        display: inline-block;
+        padding: 0.6rem 1.2rem;
+        border-radius: 0.75rem;
+        background: var(--color-acento);
+        color: var(--color-fondo);
+        font-family: var(--font-rotulo);
+        font-size: 1.5rem;
+        font-weight: 700;
+        box-shadow: 0 10px 20px -12px rgb(42 26 16 / 0.6);
+    }
+}
